@@ -37,17 +37,4 @@ public class Time {
         this.endTime = endTime;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Time time)) return false;
-        return Float.compare(time.startTime, startTime) == 0 && Float.compare(time.endTime, endTime) == 0;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(startTime, endTime);
-    }
-
-
 }
