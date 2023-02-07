@@ -45,17 +45,28 @@ public class num_1 {
 
     public static int[] towSum(int[] nums, int target) {
         // 在这里实现你的算法
-
+        int n = nums.length;//取nums数组的长度
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i};//不知道返回什么结果
+                }
+            }
+        }
         return null;
     }
 
     //在这运行
     public static void main(String[] args) {
-
+        int[] nums1;
+        int target1;//不知道怎么输入nums1数组和target1的值
+        int h=towSum(nums1,target1);
+        int g=h+1;
+        System.out.println("[" + h + ","  + g + "]");
     }
 
     /**
-     * 在这写你的题解：
-     *
+     * 在这写你的题解：两次遍历使数组中所有的数进行相加
+     *问题：如果让数组存入hash表
      */
 }
