@@ -6,6 +6,9 @@ package item.num_1;
  * @Author by zhaoxiaodong
  */
 
+import java.security.Key;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -85,12 +88,28 @@ public class num_1 {
 
         // 直接把数组放这里就会带着方括号，你可以自己试试
         System.out.println("[" + h + "," + g + "]");
+
+
     }
 
     /**
      * 在这写你的题解：两次遍历使数组中所有的数进行相加
-     *问题：如果让数组存入hash表
+     * 问题：如果让数组存入hash表
      */
+
+    // 我在这里给你提供一个简单的将数组放进HashMap的写法
+    public HashMap<Integer, Integer> getMapFromArray(int[] arr) {
+
+        // 这里为啥写Integer而不写int，你现在初学可以把他们当成一样的东西来用，你搜索【Java包装类】自学，然后看明白了我会抽空问你的
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            // 方式是下标作为Key，值作为Value，你也可以自己整
+            map.put(i, arr[i]);
+        }
+
+        return map;
+    }
 
     /**
      * 在这里教给你怎么从键盘录入数据
