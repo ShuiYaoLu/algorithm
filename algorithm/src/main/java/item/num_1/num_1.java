@@ -7,6 +7,7 @@ package item.num_1;
  */
 
 import java.security.Key;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -52,13 +53,14 @@ public class num_1 {
         // 在这里实现你的算法
         int n = nums.length;//取nums数组的长度
 
-        // 你这样不会数组越界么？数组长度是5的话， num.length的值是5，但是你的下标最大是4，正确遍历数组应该是 i< n-1
         // 你这里用++i的用意我也不是很理解，建议你搜一下i++和++i的区别，然后贴到这里
-        for (int i = 0; i < n; ++i) {
-            for (int j = i + 1; j < n; ++j) {
+        //i++先算后加，++i先加后算
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
                 if (nums[i] + nums[j] == target) {
                     // 我没看明白你的算法啥意思，所以我也没理解为啥你要在这返回，建议你先把思路写到下面，然后我可以按照你的思路捋你的代码
-                    return new int[]{i};//不知道返回什么结果
+                    return new int[]{i,j};
+                    //此时我已经找到了目标值 target 的那两个整数，所以我需要返回它们的数组下标
                 }
             }
         }
@@ -67,8 +69,8 @@ public class num_1 {
 
     //在这运行
     public static void main(String[] args) {
-        int[] nums1;
-        int target1;//不知道怎么输入nums1数组和target1的值
+        int[] nums1 = {1,2,3};
+        int target1 = 2;//不知道怎么输入nums1数组和target1的值
 
         // 输入不需要你现在通过键盘输入，你只需要显式的在代码里初始化你的输入数据即可
         // 你就这么写：
@@ -79,15 +81,12 @@ public class num_1 {
 
         // 关于这里为啥会报红，因为你的变量定义之后没有初始化，想想我给你说的关于初始化的内容，必须要在物理内存里真的申请了空间才能使用
         // 把鼠标放到红线上你就看见错误信息了Variable 'target1' might not have been initialized
+        //我知道需要初始化，但是我不知道怎么初始化。我原本的想法是通过输入target1之后就不会红了，所以我提出了怎么输入的问题。
 
-        // 这个方法的返回值是个数组，你又使用一个int类型来接他的返回值，我不是很理解，
-        // 我觉得是你没理解Java里的方法，这块你看下是不是还需要给你讲一下
-        // 我寻思你学过C语言的话应该能懂Java里的方法，但是现在看你这行代码我感觉你没懂
-        int h = towSum(nums1, target1);
-        int g = h + 1;
-
-        // 直接把数组放这里就会带着方括号，你可以自己试试
-        System.out.println("[" + h + "," + g + "]");
+        // 我知道是返回数组，但是我不知道怎么用
+        int[] h = towSum(nums1, target1);
+        
+        System.out.println(Arrays.toString(h));
 
 
     }
@@ -101,9 +100,10 @@ public class num_1 {
     public HashMap<Integer, Integer> getMapFromArray(int[] arr) {
 
         // 这里为啥写Integer而不写int，你现在初学可以把他们当成一样的东西来用，你搜索【Java包装类】自学，然后看明白了我会抽空问你的
+        //integer默认值为null，int默认值为0
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length ; i++) {
             // 方式是下标作为Key，值作为Value，你也可以自己整
             map.put(i, arr[i]);
         }
@@ -113,9 +113,11 @@ public class num_1 {
 
     /**
      * 在这里教给你怎么从键盘录入数据
+     *想等你哪天有空给我讲一下
      *
      * Scanner scanner = new Scanner(System.in);
      * int i = scanner.nextInt();
      *
      */
 }
+
