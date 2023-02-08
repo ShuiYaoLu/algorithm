@@ -55,6 +55,8 @@ public class num_1 {
 
         // 你这里用++i的用意我也不是很理解，建议你搜一下i++和++i的区别，然后贴到这里
         //i++先算后加，++i先加后算
+
+        // 我看明白了，写的可以
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -85,6 +87,10 @@ public class num_1 {
 
         // 我知道是返回数组，但是我不知道怎么用
         int[] h = towSum(nums1, target1);
+
+        // 另外的算法我给你个思路：
+        // 把数组按照我给你写的方式存进hash表里面，但是数组的下标是value，数组的元素是key
+        // 直接在hash表里面通过减法捞一下，取出的value就是结果
         
         System.out.println(Arrays.toString(h));
 
