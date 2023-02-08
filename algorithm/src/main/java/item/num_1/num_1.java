@@ -101,6 +101,7 @@ public class num_1 {
 
         // 这里为啥写Integer而不写int，你现在初学可以把他们当成一样的东西来用，你搜索【Java包装类】自学，然后看明白了我会抽空问你的
         //integer默认值为null，int默认值为0
+        //当没有输入数据的时候，Integer为null，我们可以知道没有数据，如果使用int的话，0,有时候输入的数据为0，所以，我们没办法判断是否有输入数据
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < arr.length ; i++) {
